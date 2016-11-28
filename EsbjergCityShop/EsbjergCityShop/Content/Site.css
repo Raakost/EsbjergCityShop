@@ -5,8 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-top: 15px;
 }
 
@@ -29,4 +29,13 @@ textarea {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+.table-openinghours {
+    width: 100%;
+}
+
+.jumbotron_img {
+    width: 30%;
+    border-radius: 4px;
 }

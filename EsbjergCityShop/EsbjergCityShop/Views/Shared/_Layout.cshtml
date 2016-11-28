@@ -22,17 +22,77 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Køb Gavekort", "Index", "GiftCards")</li>
-                    <li>@Html.ActionLink("Check Saldo", "GiftCardBalance", "GiftCards")</li>
+                    <li>@Html.ActionLink("Check Gavekort Saldo", "GiftCardBalance", "GiftCards")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; Esbjerg City/@DateTime.Now.Year</p>
+            @*google maps API*@
+            <div class="row">
+                <div class="col-md-4 map">
+                    <h3>Find City-kontoret her!</h3>
+                    <iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:EiNUb3J2ZWdhZGUgMTYsIDY3MDAgRXNiamVyZywgRGFubWFyaw&key=AIzaSyDEQU2DL6txTndGNQI15AH7EXafFNey3OI" allowfullscreen></iframe>
+                </div>
+                @*Åbningstider*@
+                <div class="col-md-4">
+                    <h3>City-kontorets Åbningstider</h3>
+                    <table class="table-openinghours">
+                        <tr>
+                            <td>Mandag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Tirsdag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Onsdag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Torsdag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 15.30</td>
+                        </tr>
+                    </table>
+                </div>
+                @*Specielle åbningstider*@
+                <div class="col-md-4">
+                    <h3>Specielle åbningstider i butikker</h3>
+                    <table>
+                        <tr>
+                            <td>Lørdag den 26. marts - Påskelørdag - Åbent 10 - 15</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 29. april - LATE NIGHT - Åbent til kl. 22</td>
+                        </tr>
+                        <tr>
+                            <td>Torsdag den 21. april - Åbent til kl. 18.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 3. juni – MIDNATSÅBENT til kl. 24.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 30. sep - Late Night - Åbent til kl. 22.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 25. nov - Black Christmas Friday & Juletræstænding - Late Night - Åbent til kl. 22</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            <br />
+            <p>&copy; Esbjerg City - @DateTime.Now.Year</p>
         </footer>
     </div>
 
