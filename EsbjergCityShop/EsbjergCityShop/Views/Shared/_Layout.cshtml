@@ -32,12 +32,16 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+    </div>
+    <footer>
+        <div class="container">
             @*google maps API*@
             <div class="row">
-                <div class="col-md-4 map">
+                <div class="col-md-4 google_map">
                     <h3>Find City-kontoret her!</h3>
-                    <iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:EiNUb3J2ZWdhZGUgMTYsIDY3MDAgRXNiamVyZywgRGFubWFyaw&key=AIzaSyDEQU2DL6txTndGNQI15AH7EXafFNey3OI" allowfullscreen></iframe>
+                    @*<iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:EiNUb3J2ZWdhZGUgMTYsIDY3MDAgRXNiamVyZywgRGFubWFyaw&key=AIzaSyDEQU2DL6txTndGNQI15AH7EXafFNey3OI" allowfullscreen></iframe>*@
+                    <iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3_ftLCshS0YRxxztk04CV_4&key=AIzaSyB8QxMxSvt6fc79RrYtL9QtCtEIOUnWOZo" allowfullscreen></iframe>
+
                 </div>
                 @*Åbningstider*@
                 <div class="col-md-4">
@@ -66,7 +70,7 @@
                     </table>
                 </div>
                 @*Specielle åbningstider*@
-                <div class="col-md-4">
+                <div class="col-md-4 opening_hours">
                     <h3>Specielle åbningstider i butikker</h3>
                     <table>
                         <tr>
@@ -92,10 +96,9 @@
 
             </div>
             <br />
-            <p>&copy; Esbjerg City - @DateTime.Now.Year</p>
-        </footer>
-    </div>
-
+            @*<p>&copy; Esbjerg City - @DateTime.Now.Year</p>*@
+        </div>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

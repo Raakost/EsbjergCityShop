@@ -24,10 +24,25 @@ textarea {
     max-width: 280px;
 }
 
+/* Shared layout*/
+footer {
+    background-color: #222222;
+    color: #999999;
+}
+
+    footer .row {
+        padding: 50px;
+    }
+
+.google_map, .opening_hours {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .truncate-text {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 
@@ -35,7 +50,39 @@ textarea {
     width: 100%;
 }
 
-.jumbotron_img {
-    width: 30%;
-    border-radius: 4px;
+/* Frontpage*/
+.thumbnail {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+    .thumbnail img {
+        padding-bottom: 15px;
+    }
+
+.jumbotron.jumbotron_frontpage {
+    padding: 15px;
+    border-radius: 0px;
+}
+
+.jumbotron_frontpage h1 {
+    font-size: 30px;
+    padding-left: 15px;
+}
+
+.event_description {
+    padding-left: 0px;
+}
+
+.event_date {
+    text-align: right;
+    padding-right: 30px;
+}
+
+nav {
+    text-align: center;
+}
+
+.pagination a {
+    color: black;
 }
