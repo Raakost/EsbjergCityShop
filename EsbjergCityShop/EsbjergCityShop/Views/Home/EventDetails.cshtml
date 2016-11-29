@@ -1,0 +1,17 @@
+﻿@model Gateway.Models.Event
+
+<div class="row event_details_row">
+    <h1>@Model.Title</h1>
+    <hr />
+    <h4>D.&nbsp;@Model.DateOfEvent.ToLongDateString()&nbsp;-&nbsp;kl.&nbsp;@Model.DateOfEvent.ToShortTimeString()</h4>
+
+    <div class="col-md-5 img- thumbnail event_details_thubmnail">
+        <img src=@Model.Img />
+    </div>
+    <div class="col-md-7">
+        <p>@Html.DisplayFor(model => model.Description)</p>
+    </div>
+    @*<p class="big_btn">
+            <a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Home")">&laquo; Tilbage til forsiden</a>
+        </p>*@
+</div>

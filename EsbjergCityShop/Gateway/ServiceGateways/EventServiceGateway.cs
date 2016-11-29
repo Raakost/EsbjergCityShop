@@ -23,7 +23,7 @@ namespace Gateway.ServiceGateways
             using (var client = new HttpClient())
             {
                 ServiceGateway(client);
-                HttpResponseMessage responseMessage = client.PostAsJsonAsync("api/Events", t).Result;
+                HttpResponseMessage responseMessage = client.PostAsJsonAsync("api/events", t).Result;
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     return responseMessage.Content.ReadAsAsync<Event>().Result;
