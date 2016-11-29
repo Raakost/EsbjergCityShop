@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    @*<-- Navbar -->*@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -28,20 +29,18 @@
             </div>
         </div>
     </div>
-
+    @*</-- Navbar -->*@
     <div class="container body-content">
         @RenderBody()
-        <hr />
     </div>
+    @*<-- Footer -->*@
     <footer>
         <div class="container">
             @*google maps API*@
             <div class="row">
                 <div class="col-md-4 google_map">
                     <h3>Find City-kontoret her!</h3>
-                    @*<iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:EiNUb3J2ZWdhZGUgMTYsIDY3MDAgRXNiamVyZywgRGFubWFyaw&key=AIzaSyDEQU2DL6txTndGNQI15AH7EXafFNey3OI" allowfullscreen></iframe>*@
                     <iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3_ftLCshS0YRxxztk04CV_4&key=AIzaSyB8QxMxSvt6fc79RrYtL9QtCtEIOUnWOZo" allowfullscreen></iframe>
-
                 </div>
                 @*Åbningstider*@
                 <div class="col-md-4">
@@ -93,12 +92,12 @@
                         </tr>
                     </table>
                 </div>
-
             </div>
             <br />
-            @*<p>&copy; Esbjerg City - @DateTime.Now.Year</p>*@
         </div>
     </footer>
+    @*</-- Footer -->*@
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
