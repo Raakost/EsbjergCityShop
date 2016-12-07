@@ -23,9 +23,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Køb Gavekort", "Index", "GiftCards")</li>
-                    <li>@Html.ActionLink("Check Gavekort Saldo", "GiftCardBalance", "GiftCards")</li>
+                    <li>@Html.ActionLink("Check Gavekort Saldo", "GiftCardBalance", "GiftCards")</li>                    
                 </ul>
-                @Html.Action("CartIndex", "ShoppingCart")
+                <ul class="nav navbar-nav pull-right">
+                    @Html.Action("CartIndex", "ShoppingCart")
+                </ul>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

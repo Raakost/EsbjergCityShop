@@ -115,6 +115,32 @@ nav {
     padding-left: 0;
 }
 
+/*Shopping Cart*/
+.cart_dropdown {
+    max-height: 400px;
+    overflow-y: scroll;
+    width: 250px;
+    padding: 10px;
+}
+
+.cart_img img {
+    height: 60px;
+    border-radius: 4px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.cart_amount {
+    width: 100px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.cart_deletebtn {
+    padding-right: 5px;
+}
+
+
 /* Div */
 .big_btn a {
     border: none;
