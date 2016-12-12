@@ -6,103 +6,135 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="/Scripts/snowstorm-min.js"></script>
+    <script>
+        snowStorm.freezeOnBlur = false;       // Stops the snow effect when the browser window goes out of focus, eg., user is in another tab. Saves CPU, nicer to user.
+        snowStorm.flakesMax = 100;            // Sets the maximum number of snowflakes that can exist on the screen at any given time.
+        snowStorm.flakesMaxActive = 150;      // Sets the limit of "falling" snowflakes (ie. moving on the screen, thus considered to be active.)
+        snowStorm.useTwinkleEffect = true;    // let the snow flicker in and out of view
+        snowStorm.snowStick = false;          // Allows the snow to "stick" to the bottom of the window. When off, snow will never sit at the bottom.
+        snowStorm.vMaxX = 2;                  // Defines maximum X and Y velocities for the storm; a random value in this range is selected for each snowflake.
+        snowStorm.vMaxY = 2;                  // Defines maximum X and Y velocities for the storm; a random value in this range is selected for each snowflake.
+    </script>
 </head>
 <body>
-<div class="background">
-    <img src="~/Content/Images/gågade2.jpg"/>
-</div>
-@*<-- Navbar -->*@
-<div class="navbar navbar-inverse navbar-fixed-top">
-
-    <div class="container-fluid">
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="../Home/Index"><img src="~/Content/Images/logo.png" class="logo"/></a></li>
-                <li>@Html.ActionLink("Køb Gavekort", "CreateGiftCard", "GiftCards")</li>
-                <li>@Html.ActionLink("Check Gavekort Saldo", "GiftCardBalance", "GiftCards")</li>
-            </ul>
-            <ul class="nav navbar-nav pull-right">
-                @Html.Action("CartIndex", "ShoppingCart")
-            </ul>
-
-            @Html.Partial("_LoginPartial")
-        </div>
+    <div class="background">
+        <img src="~/Content/Images/bg/3.jpg" />
     </div>
-</div>
-@*</-- Navbar -->*@
-<div class="content-wrapper">
-    <div class="container body-content">
-        @RenderBody()
-    </div>
-</div>
-@*<-- Footer -->*@
-<footer>
-    <div class="container">
-        @*google maps API*@
-        <div class="row">
-            <div class="col-md-4 google_map">
-                <h3>Find City-kontoret her!</h3>
-                <iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3_ftLCshS0YRxxztk04CV_4&key=AIzaSyB8QxMxSvt6fc79RrYtL9QtCtEIOUnWOZo" allowfullscreen></iframe>
-            </div>
-            @*Åbningstider*@
-            <div class="col-md-4">
-                <h3>City-kontorets Åbningstider</h3>
-                <table class="table-openinghours">
-                    <tr>
-                        <td>Mandag&nbsp;</td>
-                        <td>&nbsp;kl. 10.00 til kl. 16.00</td>
-                    </tr>
-                    <tr>
-                        <td>Tirsdag&nbsp;</td>
-                        <td>&nbsp;kl. 10.00 til kl. 16.00</td>
-                    </tr>
-                    <tr>
-                        <td>Onsdag&nbsp;</td>
-                        <td>&nbsp;kl. 10.00 til kl. 16.00</td>
-                    </tr>
-                    <tr>
-                        <td>Torsdag&nbsp;</td>
-                        <td>&nbsp;kl. 10.00 til kl. 16.00</td>
-                    </tr>
-                    <tr>
-                        <td>Fredag&nbsp;</td>
-                        <td>&nbsp;kl. 10.00 til kl. 15.30</td>
-                    </tr>
-                </table>
-            </div>
-            @*Specielle åbningstider*@
-            <div class="col-md-4 opening_hours">
-                <h3>Specielle åbningstider i butikker</h3>
-                <table>
-                    <tr>
-                        <td>Lørdag den 26. marts - Påskelørdag - Åbent 10 - 15</td>
-                    </tr>
-                    <tr>
-                        <td>Fredag den 29. april - LATE NIGHT - Åbent til kl. 22</td>
-                    </tr>
-                    <tr>
-                        <td>Torsdag den 21. april - Åbent til kl. 18.00</td>
-                    </tr>
-                    <tr>
-                        <td>Fredag den 3. juni – MIDNATSÅBENT til kl. 24.00</td>
-                    </tr>
-                    <tr>
-                        <td>Fredag den 30. sep - Late Night - Åbent til kl. 22.00</td>
-                    </tr>
-                    <tr>
-                        <td>Fredag den 25. nov - Black Christmas Friday & Juletræstænding - Late Night - Åbent til kl. 22</td>
-                    </tr>
-                </table>
+    @*<-- Navbar -->*@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container-fluid">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home/Index"><img src="~/Content/Images/logo.png" class="logo" /></a></li>
+                    <li>@Html.ActionLink("Køb Gavekort", "CreateGiftCard", "GiftCards")</li>
+                    <li>@Html.ActionLink("Check Gavekort Saldo", "GiftCardBalance", "GiftCards")</li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    @Html.Action("CartIndex", "ShoppingCart")
+                </ul>
+
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
-        <br/>
     </div>
-</footer>
-@*</-- Footer -->*@
+    @*</-- Navbar -->*@
+    <div class="content-wrapper">
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </div>
+    @*<-- Footer -->*@
+    <footer>
+        <div class="container">
+            @*google maps API*@
+            <div class="row footer-container">
+                <div class="col-md-4 google_map">
+                    <h3>Find City-kontoret her!</h3>
+                    <iframe width="90%" height="200px" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3_ftLCshS0YRxxztk04CV_4&key=AIzaSyB8QxMxSvt6fc79RrYtL9QtCtEIOUnWOZo" allowfullscreen></iframe>
+                </div>
+                @*Åbningstider*@
+                <div class="col-md-4">
+                    <h3>City-kontorets Åbningstider</h3>
+                    <table class="table-openinghours">
+                        <tr>
+                            <td>Mandag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Tirsdag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Onsdag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Torsdag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag&nbsp;</td>
+                            <td>&nbsp;kl. 10.00 til kl. 15.30</td>
+                        </tr>
+                    </table>
+                </div>
+                @*Specielle åbningstider*@
+                <div class="col-md-4 opening_hours">
+                    <h3>Specielle åbningstider i butikker</h3>
+                    <table>
+                        <tr>
+                            <td>Lørdag den 26. marts - Påskelørdag - Åbent 10 - 15</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 29. april - LATE NIGHT - Åbent til kl. 22</td>
+                        </tr>
+                        <tr>
+                            <td>Torsdag den 21. april - Åbent til kl. 18.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 3. juni – MIDNATSÅBENT til kl. 24.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 30. sep - Late Night - Åbent til kl. 22.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag den 25. nov - Black Christmas Friday & Juletræstænding - Late Night - Åbent til kl. 22</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br />
+        </div>
+    </footer>
+    @*</-- Footer -->*@
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-@RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @*<script>
+            $(document).ready(function () {
+                var header = $('.background img');
+
+                var backgrounds = new Array(
+                    '/content/images/d9n.jpg'
+                  , '/content/images/bg/3.jpg'
+                  , '/content/images/bg/4.jpg'
+                );
+
+                var current = 0;
+
+                function nextBackground() {
+                    current++;
+                    current = current % backgrounds.length;
+                    header.attr('src', backgrounds[current]);
+                }
+                setInterval(nextBackground, 10000);
+
+                header.attr('src', backgrounds[0]);
+            });
+        </script>*@
 </body>
 </html>
