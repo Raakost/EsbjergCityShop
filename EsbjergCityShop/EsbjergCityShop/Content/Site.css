@@ -63,7 +63,8 @@ footer {
 }
 
     footer .row {
-        padding: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
 .google_map, .opening_hours {
@@ -95,7 +96,14 @@ footer {
 .jumbotron.jumbotron_frontpage {
     padding: 15px;
     border-radius: 0;
+    margin-left: 150px;
+    margin-right: 150px;
+    opacity: 0.8;
+    padding: 0;
 }
+
+    .jumbotron.jumbotron_frontpage:first-child {
+    }
 
 .jumbotron_frontpage h1 {
     font-size: 30px;
@@ -115,7 +123,8 @@ footer {
 /* Pagination */
 nav {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
+    margin-top: -30px;
 }
 
 .pagination a {
@@ -125,7 +134,7 @@ nav {
 /* Event Details */
 .event_details_row {
     margin-left: 0;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
     .event_details_row h1 {
@@ -135,6 +144,14 @@ nav {
 
 .event_details_thubmnail {
     padding-left: 0;
+}
+
+.jumbotron.jumbotron_eventdetails {
+    padding: 15px;
+    border-radius: 0;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    opacity: 0.9;
 }
 
 /*Shopping Cart*/
@@ -162,10 +179,19 @@ nav {
     padding-right: 5px;
 }
 
-
 /* Div */
 .big_btn a {
     border: none;
     border-radius: 0;
     font-family: Helvetica;
+}
+
+.btn-sm {
+    border-radius: 0;
+    font-family: Helvetica;
+    border: none;
+}
+
+.input_field {
+    border-radius: 0;
 }

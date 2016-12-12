@@ -21,15 +21,18 @@ namespace EsbjergCityShop.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateGiftCard(double amount)
+        public ActionResult CreateGiftCard(double? amount)
         {
-            var newCard = new GiftCard();
-            newCard.Amount = amount;
-            newCard.CardNumber = Guid.NewGuid().ToString();
-
-            var cart = ShoppingCart.GetCart();
-            cart.AddItemToCart(newCard);
+            if (amount.HasValue && amount!= 0.0)
+            {
+                var newCard = new GiftCard();
+                newCard.Amount = amount.Value;
+                newCard.CardNumber = Guid.NewGuid().ToString();
+                var cart = ShoppingCart.GetCart();
+                cart.AddItemToCart(newCard);
+            }
             return RedirectToAction("CreateGiftCard");
+
         }
 
         [HttpGet]

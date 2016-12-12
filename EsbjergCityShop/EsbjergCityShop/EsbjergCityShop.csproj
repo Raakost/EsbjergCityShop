@@ -226,6 +226,10 @@
     <Content Include="Content\Images\7.jpg" />
     <Content Include="Content\Images\8.jpg" />
     <Content Include="Content\Images\9.jpg" />
+    <Content Include="Content\Images\bg\1.jpg" />
+    <Content Include="Content\Images\bg\2.jpg" />
+    <Content Include="Content\Images\bg\3.jpg" />
+    <Content Include="Content\Images\bg\4.jpg" />
     <Content Include="Content\Images\d9n.jpg" />
     <Content Include="Content\Images\esbjerg-13.jpg" />
     <Content Include="Content\Images\esbjergcity.png" />

@@ -9,17 +9,20 @@
         @foreach (var item in Model.GiftCards)
         {
             <li>
-                <table class="cart_table">                    
+                <table class="cart_table">
                     <tbody>
-                    <tr>
-                        <td class="cart_img"><img src="/Content/Images/gavekort.png"/></td>
-                        <td class="cart_amount">@item.Amount kr</td>
-                        <td class="cart_deletebtn"><a href="@Url.Action("RemoveItemFromCart", "ShoppingCart", new {cardNumber = item.CardNumber})" class="btn btn-xs btn-danger pull-right">X</a></td>
-                    </tr>
+                        <tr>
+                            <td class="cart_img"><img src="/Content/Images/gavekort.png" /></td>
+                            <td class="cart_amount">@item.Amount kr</td>
+                            <td class="cart_deletebtn"><a href="@Url.Action("RemoveItemFromCart", "ShoppingCart", new {cardNumber = item.CardNumber})" class="btn btn-xs btn-danger pull-right">X</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </li>
         }
+        <li>
+            <button class="btn btn-primary btn-sm pull-right">Gå til kassen</button>
+        </li>
     </ul>
 </li>
 

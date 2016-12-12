@@ -3,16 +3,17 @@
 @{
     ViewBag.Title = "Esbjerg City";
 }
+<div class="jumbotron jumbotron_eventdetails">
+    <div class="row event_details_row">
+        <h1>@Model.Title</h1>
+        <hr />
+        <h4>D.&nbsp;@Model.DateOfEvent.ToLongDateString()&nbsp;-&nbsp;kl.&nbsp;@Model.DateOfEvent.ToShortTimeString()</h4>
 
-<div class="row event_details_row">
-    <h1>@Model.Title</h1>
-    <hr />
-    <h4>D.&nbsp;@Model.DateOfEvent.ToLongDateString()&nbsp;-&nbsp;kl.&nbsp;@Model.DateOfEvent.ToShortTimeString()</h4>
-
-    <div class="col-md-5 img- thumbnail event_details_thubmnail">
-        <img src=@Model.Img />
-    </div>
-    <div class="col-md-7">
-        <p>@Html.DisplayFor(model => model.Description)</p>
+        <div class="col-md-5 img- thumbnail event_details_thubmnail">
+            <img src=@Model.Img />
+        </div>
+        <div class="col-md-7">
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
     </div>
 </div>
