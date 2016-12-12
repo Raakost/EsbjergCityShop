@@ -61,6 +61,20 @@ namespace Gateway.ServiceGateways
             }
         }
 
+        public GiftCard GetByCardNumber(string cardNumber)
+        {
+            using (var client = new HttpClient())
+            {
+                ServiceGateway(client);
+                HttpResponseMessage responseMessage = client.GetAsync($"api/giftcards/GetByCardNumber/{cardNumber}").Result;
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    return responseMessage.Content.ReadAsAsync<GiftCard>().Result;
+                }
+                return null;
+            }
+        }
+
         public GiftCard Update(GiftCard t)
         {
             using (var client = new HttpClient())

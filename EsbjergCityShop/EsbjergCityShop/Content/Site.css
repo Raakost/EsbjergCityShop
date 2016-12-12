@@ -1,11 +1,24 @@
 ﻿/* Stop footer from floating in page*/
 html, body {
-    padding-top: 35px;
+    padding-top: 41px;
     height: 100%;
     width: 100%;
     margin: 0;
     display: table;
 }
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+    .background img {
+        height: 100%;
+        width: 100%;
+    }
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 50px;
@@ -33,6 +46,15 @@ p {
 }
 
 /* Shared layout */
+.nav.navbar-nav {
+    padding-top: 20px;
+}
+
+    .nav.navbar-nav .logo {
+        margin-top: -20px;
+        margin-right: 50px;
+    }
+
 footer {
     background-color: #222222;
     color: #999999;

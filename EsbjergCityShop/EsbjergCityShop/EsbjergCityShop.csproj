@@ -217,15 +217,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\1.jpg" />
     <Content Include="Content\Images\2.jpg" />
+    <Content Include="Content\Images\26151025.jpg" />
     <Content Include="Content\Images\3.jpg" />
     <Content Include="Content\Images\4.jpg" />
     <Content Include="Content\Images\5.jpg" />
+    <Content Include="Content\Images\5391111.jpg" />
     <Content Include="Content\Images\6.jpg" />
     <Content Include="Content\Images\7.jpg" />
     <Content Include="Content\Images\8.jpg" />
     <Content Include="Content\Images\9.jpg" />
+    <Content Include="Content\Images\d9n.jpg" />
+    <Content Include="Content\Images\esbjerg-13.jpg" />
     <Content Include="Content\Images\esbjergcity.png" />
     <Content Include="Content\Images\gavekort.png" />
+    <Content Include="Content\Images\gågade.JPG" />
+    <Content Include="Content\Images\gågade2.jpg" />
+    <Content Include="Content\Images\hvidemænd.jpg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\vandtårn.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -282,7 +291,8 @@
     <Content Include="Views\Home\EventDetails.cshtml" />
     <Content Include="Views\Home\CartDropdown.cshtml" />
     <Content Include="Views\ShoppingCart\CartIndex.cshtml" />
-    <Content Include="Views\GiftCards\Index.cshtml" />
+    <Content Include="Views\GiftCards\CreateGiftCard.cshtml" />
+    <Content Include="Views\GiftCards\GiftCardBalance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

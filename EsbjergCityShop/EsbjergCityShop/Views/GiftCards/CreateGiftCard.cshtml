@@ -1,0 +1,31 @@
+﻿@model Gateway.Models.GiftCard
+
+@{
+    ViewBag.Title = "Køb Gavekort";
+}
+
+<h2>Køb Gavekort</h2>
+
+@using (Html.BeginForm("CreateGiftCard", "GiftCards", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })     
+        <div class="form-group">
+            @Html.Label("Indtast Beløb", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Tilføj til kurv" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
