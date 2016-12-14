@@ -16,24 +16,25 @@ namespace EsbjergCityShop.Controllers
         private IServiceGateway<Order> _og = new Facade().GetOrderGateway();
         private IServiceGateway<Customer> _cg = new Facade().GetCustomerGateway();
 
-
-        // GET: giftcards
+        [HttpGet]
         public ActionResult Index()
         {
             var cart = System.Web.HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
             return View(cart.GiftCards);
         }
 
-        // POST: Orders/Create
+
         [HttpPost]
         public ActionResult CreateOrder()
         {
             var cart = System.Web.HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
             var order = new Order()
             {
+                //Customer =
                 GiftCards = cart.GiftCards,
-                DateOfPurchase = DateTime.Now
+                DateOfPurchase = DateTime.Now,
             };
+            _og.Create(order);
             return View(order);
         }
     }

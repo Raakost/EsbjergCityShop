@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <script src="/Scripts/snowstorm-min.js"></script>
-    <script>
-        snowStorm.freezeOnBlur = false;
-        snowStorm.flakesMax = 50;
-        snowStorm.flakesMaxActive = 60;
-        snowStorm.useTwinkleEffect = true;
-        snowStorm.snowStick = false;
-        snowStorm.vMaxX = 0;
-        snowStorm.vMaxY = 2;
-    </script>
+    @*<script src="/Scripts/snowstorm-min.js"></script>
+        <script>
+            snowStorm.freezeOnBlur = false;
+            snowStorm.flakesMax = 50;
+            snowStorm.flakesMaxActive = 60;
+            snowStorm.useTwinkleEffect = true;
+            snowStorm.snowStick = false;
+            snowStorm.vMaxX = 0;
+            snowStorm.vMaxY = 2;
+        </script>*@
 </head>
 <body>
     <div class="background">
@@ -27,14 +27,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/Home/Index"><img src="~/Content/Images/logo.png" class="logo" /></a></li>
-                    <li>@Html.ActionLink("Køb Gavekort", "CreateGiftCard", "GiftCards")</li>
-                    <li>@Html.ActionLink("Check Gavekort Saldo", "GiftCardBalance", "GiftCards")</li>
+                    <li style="font-size: 18px">@Html.ActionLink("Køb Gavekort", "CreateGiftCard", "GiftCards")</li>
+                    <li style="font-size: 18px">@Html.ActionLink("Check Gavekort Saldo", "GiftCardBalance", "GiftCards")</li>
                 </ul>
                 <ul class="nav navbar-nav pull-right">
-                    @Html.Action("CartIndex", "ShoppingCart")
+                    <li>@Html.Action("CartIndex", "ShoppingCart")</li>
                 </ul>
-
-                @Html.Partial("_LoginPartial")
+                <span style="font-size: 18px">@Html.Partial("_LoginPartial")</span>
             </div>
         </div>
     </div>
@@ -112,5 +111,15 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="/Scripts/snowFall.min.jquery.js"></script>
+    <script>
+        $(function () {
+            $("div.background").snowfall({
+                flakeCount: 50,
+                minSize: 1,
+                maxSize: 4
+            });
+        });
+    </script>
 </body>
 </html>

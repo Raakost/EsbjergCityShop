@@ -98,7 +98,7 @@ footer {
     border-radius: 0;
     margin-left: 150px;
     margin-right: 150px;
-    opacity: 0.8;
+    opacity: 0.9;
     padding: 0;
 }
 
@@ -152,6 +152,8 @@ nav {
     border-radius: 0;
     margin-bottom: 100px;
     margin-top: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
     opacity: 0.9;
 }
 
@@ -168,6 +170,11 @@ nav {
     color: #ffffff;
     text-decoration: none;
     background-color: #47a447;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #222222;
+    color: #999999;
 }
 
 .dropdown-menu > li > a {
@@ -193,14 +200,22 @@ nav {
 }
 
 /* Div */
-.big_btn a, .btn-sm, .btn-success, .btn-danger {
+.big_btn a, .btn-sm, .btn-success, .btn-danger, .btn-lg {
     border-radius: 0;
     font-family: Helvetica;
     border: none;
 }
 
+.btn-sm {
+    font-size: 14px;
+}
+
 .input_field {
     border-radius: 0;
+}
+
+label {
+    font-size: 18px;
 }
 
 /*Order Details*/

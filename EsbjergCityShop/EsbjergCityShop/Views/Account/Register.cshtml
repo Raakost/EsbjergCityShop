@@ -1,41 +1,76 @@
 ﻿@model EsbjergCityShop.Models.RegisterViewModel
-@{
-    ViewBag.Title = "Register";
-}
 
-<h2>@ViewBag.Title.</h2>
+@{
+    ViewBag.Title = "Opret kunde";
+}
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+{<div class="jumbotron jumbotron_eventdetails register_jumbo">
+        @Html.AntiForgeryToken()
+        <h2>Indtast dine oplysninger</h2>
+        <hr style="border-bottom: 1px solid #222222;" />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control input_field" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control input_field" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input_field" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+        <div class="form-group">
+            @Html.Label("Fornavn", new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Customer.Firstname, new { @class = "form-control input_field" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Efternavn", new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Customer.Lastname, new { @class = "form-control input_field" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Gadenavn", new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Customer.Street, new { @class = "form-control input_field" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Nummer", new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Customer.StreetNumber, new { @class = "form-control input_field" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Postnr", new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Customer.Zipcode, new { @class = "form-control input_field" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("By", new { @class = "col-md-4 control-label" })
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Customer.City, new { @class = "form-control input_field" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-10">
+                <input type="submit" class="btn btn-primary btn-sm" value="Opret" />
+            </div>
         </div>
     </div>
 }
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Gateway.Models;
 
 namespace EsbjergCityShop.Models
 {
@@ -79,6 +80,7 @@ namespace EsbjergCityShop.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        public Customer Customer { get; set; }
     }
 
     public class ResetPasswordViewModel
