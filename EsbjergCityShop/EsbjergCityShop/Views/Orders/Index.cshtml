@@ -53,8 +53,14 @@
                 </tr>
             </tbody>
         </table>
-        <button class="btn btn-success" type="submit">Betal</button>
-        <a class="btn btn-success" href="@Url.Action("Login", "Account")">Log ind</a>
+        @if (Session["token"] != null)
+        {
+            <button class="btn btn-success" type="submit">Betal</button>
+        }
+        else
+        {
+            <a class="btn btn-success" href="@Url.Action("Login", "Account")">Log ind</a>
+        }
     </div>
 }
 
