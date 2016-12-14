@@ -22,7 +22,6 @@ namespace EsbjergCityShop.Controllers
         {
             var cart = System.Web.HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
             return View(cart.GiftCards);
-
         }
 
         // POST: Orders/Create
