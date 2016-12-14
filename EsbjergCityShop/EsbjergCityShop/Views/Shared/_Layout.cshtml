@@ -8,22 +8,21 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="/Scripts/snowstorm-min.js"></script>
     <script>
-        snowStorm.freezeOnBlur = false;       // Stops the snow effect when the browser window goes out of focus, eg., user is in another tab. Saves CPU, nicer to user.
-        snowStorm.flakesMax = 100;            // Sets the maximum number of snowflakes that can exist on the screen at any given time.
-        snowStorm.flakesMaxActive = 150;      // Sets the limit of "falling" snowflakes (ie. moving on the screen, thus considered to be active.)
-        snowStorm.useTwinkleEffect = true;    // let the snow flicker in and out of view
-        snowStorm.snowStick = false;          // Allows the snow to "stick" to the bottom of the window. When off, snow will never sit at the bottom.
-        snowStorm.vMaxX = 2;                  // Defines maximum X and Y velocities for the storm; a random value in this range is selected for each snowflake.
-        snowStorm.vMaxY = 2;                  // Defines maximum X and Y velocities for the storm; a random value in this range is selected for each snowflake.
+        snowStorm.freezeOnBlur = false;
+        snowStorm.flakesMax = 50;
+        snowStorm.flakesMaxActive = 60;
+        snowStorm.useTwinkleEffect = true;
+        snowStorm.snowStick = false;
+        snowStorm.vMaxX = 0;
+        snowStorm.vMaxY = 2;
     </script>
 </head>
 <body>
     <div class="background">
-        <img src="~/Content/Images/bg/3.jpg" />
+        <img src="~/Content/Images/bg/2.jpg" />
     </div>
     @*<-- Navbar -->*@
     <div class="navbar navbar-inverse navbar-fixed-top">
-
         <div class="container-fluid">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -113,28 +112,5 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
-    @*<script>
-            $(document).ready(function () {
-                var header = $('.background img');
-
-                var backgrounds = new Array(
-                    '/content/images/d9n.jpg'
-                  , '/content/images/bg/3.jpg'
-                  , '/content/images/bg/4.jpg'
-                );
-
-                var current = 0;
-
-                function nextBackground() {
-                    current++;
-                    current = current % backgrounds.length;
-                    header.attr('src', backgrounds[current]);
-                }
-                setInterval(nextBackground, 10000);
-
-                header.attr('src', backgrounds[0]);
-            });
-        </script>*@
 </body>
 </html>

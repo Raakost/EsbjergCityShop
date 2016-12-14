@@ -161,12 +161,23 @@ nav {
     overflow-y: scroll;
     width: 250px;
     padding: 10px;
+    opacity: 0.9;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #47a447;
+}
+
+.dropdown-menu > li > a {
+    color: #ffffff;
+    background-color: #5cb85c;
 }
 
 .cart_img img {
-    height: 60px;
+    height: 40px;
     border-radius: 4px;
-    margin-left: 5px;
     margin-bottom: 5px;
 }
 
@@ -176,18 +187,13 @@ nav {
     text-align: right;
 }
 
-.cart_deletebtn {
-    padding-right: 5px;
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 13px;
+    border-radius: 0;
 }
 
 /* Div */
-.big_btn a {
-    border: none;
-    border-radius: 0;
-    font-family: Helvetica;
-}
-
-.btn-sm {
+.big_btn a, .btn-sm, .btn-success, .btn-danger {
     border-radius: 0;
     font-family: Helvetica;
     border: none;
@@ -195,4 +201,27 @@ nav {
 
 .input_field {
     border-radius: 0;
+}
+
+/*Order Details*/
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    vertical-align: middle;
+}
+
+.order_table_img img {
+    height: 70px;
+    border-radius: 4px;
+}
+
+.order_table_amount {
+    font-size: 16px;
+}
+
+.order_delete_btn {
+    width: 34px;
+}
+
+.total_amount {
+    font-size: 20px;
+    font-family: Helvetica;
 }

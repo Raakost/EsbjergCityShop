@@ -3,87 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EsbjergCityShop.Models;
+using Gateway;
+using Gateway.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace EsbjergCityShop.Controllers
 {
     public class OrdersController : Controller
     {
-        // GET: Orders
+        private IServiceGateway<GiftCard> _gg = new Facade().GetGiftCardGateway();
+        private IServiceGateway<Order> _og = new Facade().GetOrderGateway();
+        private IServiceGateway<Customer> _cg = new Facade().GetCustomerGateway();
+
+
+        // GET: giftcards
         public ActionResult Index()
         {
-            return View();
-        }
+            var cart = System.Web.HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
+            return View(cart.GiftCards);
 
-        // GET: Orders/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Orders/Create
-        public ActionResult Create()
-        {
-            return View();
         }
 
         // POST: Orders/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CreateOrder()
         {
-            try
+            var cart = System.Web.HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
+            var order = new Order()
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Orders/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Orders/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Orders/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Orders/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                GiftCards = cart.GiftCards,
+                DateOfPurchase = DateTime.Now
+            };
+            return View(order);
         }
     }
 }

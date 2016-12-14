@@ -23,7 +23,7 @@ namespace EsbjergCityShop.Controllers
         [HttpPost]
         public ActionResult CreateGiftCard(double? amount)
         {
-            if (amount.HasValue && amount!= 0.0)
+            if (amount.HasValue && amount != 0.0)
             {
                 var newCard = new GiftCard();
                 newCard.Amount = amount.Value;
@@ -46,6 +46,13 @@ namespace EsbjergCityShop.Controllers
         {
             var giftCard = _gg.GetByCardNumber(cardNumber);
             return View(giftCard);
+        }
+
+        [HttpDelete]
+        public ActionResult DeleteGiftCard(GiftCard giftCard)
+        {
+            _gg.Delete(giftCard);
+            return RedirectToAction("Create", "Orders");
         }
     }
 }

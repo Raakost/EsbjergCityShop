@@ -1,0 +1,61 @@
+﻿@using Gateway.Models
+@model List<GiftCard>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@{
+    double total = 0;
+    foreach (var giftCard in Model)
+    {
+        total = total + giftCard.Amount;
+    }
+}
+
+@using (Html.BeginForm("CreateOrder", "Orders", FormMethod.Post))
+{
+    <div class="jumbotron jumbotron_eventdetails">
+        <div class="form-horizontal clearfix">
+            <div class="col-md-6">
+                <h2>Godkend Ordre</h2>
+            </div>
+            <div class="col-md-6">
+                <h2 class="pull-right">@DateTime.Now.ToShortDateString()</h2>
+            </div>
+        </div>
+        <hr style="border-bottom: 1px solid #222222;" />
+        <table class="order_table table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>@Html.Label("Beløb på Gavekort")</th>
+                    <th>@Html.Label("Total")</th>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="cart_deletebtn order_delete_btn"><a href="@Url.Action("RemoveItemFromCart", "ShoppingCart", new {cardNumber = item.CardNumber})" class="btn btn-xs btn-danger">X</a></td>
+                        <td class="order_table_img"><img src="/Content/Images/gavekort.png" /></td>
+                        <td class="order_table_amount">@item.Amount</td>
+                        <td></td>
+                    </tr>
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p class="total_amount">@total</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-success" type="submit">Betal</button>
+        <a class="btn btn-success" href="@Url.Action("Login", "Account")">Log ind</a>
+    </div>
+}
+
+
