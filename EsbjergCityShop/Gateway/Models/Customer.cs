@@ -6,7 +6,7 @@ namespace Gateway.Models
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        //public string Email { get; set; }       
+        public string Email { get; set; }       
         public string Street { get; set; }
         public int StreetNumber { get; set; }
         public int Zipcode { get; set; }
