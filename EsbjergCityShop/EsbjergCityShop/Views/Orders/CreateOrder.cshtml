@@ -4,26 +4,9 @@
     ViewBag.Title = "Ordre Gennemført";
 }
 
-<div>
-    <h4>Order</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfPurchase)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateOfPurchase)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsCompleted)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsCompleted)
-        </dd>
-
-    </dl>
+<div class="jumbotron jumbotron_eventdetails">
+    <div class="form-horizontal clearfix">
+        <h2 style="text-align: center">D.@DateTime.Now.ToShortDateString() - Tak for din bestilling</h2>
+    </div>
 </div>
 

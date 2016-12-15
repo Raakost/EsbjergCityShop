@@ -30,7 +30,7 @@ namespace EsbjergCityShop.Controllers
             var cart = System.Web.HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
             var order = new Order()
             {
-                //Customer =
+                Customer = Session["customer"] as Customer,
                 GiftCards = cart.GiftCards,
                 DateOfPurchase = DateTime.Now,
             };
