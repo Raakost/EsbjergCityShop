@@ -12,9 +12,7 @@ namespace EsbjergCityShop.Controllers
 {
     public class OrdersController : Controller
     {
-        private IServiceGateway<GiftCard> _gg = new Facade().GetGiftCardGateway();
         private IServiceGateway<Order> _og = new Facade().GetOrderGateway();
-        private IServiceGateway<Customer> _cg = new Facade().GetCustomerGateway();
 
         [HttpGet]
         public ActionResult Index()
@@ -23,7 +21,7 @@ namespace EsbjergCityShop.Controllers
             return View(cart.GiftCards);
         }
 
-
+      
         [HttpPost]
         public ActionResult CreateOrder()
         {
@@ -35,6 +33,7 @@ namespace EsbjergCityShop.Controllers
                 DateOfPurchase = DateTime.Now,
             };
             _og.Create(order);
+            Session["ShoppingCart"] = null;
             return View(order);
         }
     }
