@@ -17,7 +17,6 @@ using Gateway.ServiceGateways;
 
 namespace EsbjergCityShop.Controllers
 {
-    [Authorize]
     public class AccountController : Controller
     {
         private AccountServiceGateway _gateway = new AccountServiceGateway();
@@ -27,7 +26,6 @@ namespace EsbjergCityShop.Controllers
         }
 
         // GET: /Account/Login
-        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -35,7 +33,6 @@ namespace EsbjergCityShop.Controllers
         }
 
         // POST: /Account/Login
-        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model, string returnUrl)
@@ -68,7 +65,6 @@ namespace EsbjergCityShop.Controllers
 
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterModel model)
         {
@@ -80,8 +76,7 @@ namespace EsbjergCityShop.Controllers
             return RedirectToAction("Login", "Account");
 
         }
-
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult LogOff()
         {

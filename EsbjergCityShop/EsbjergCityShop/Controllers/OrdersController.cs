@@ -21,7 +21,7 @@ namespace EsbjergCityShop.Controllers
             return View(cart.GiftCards);
         }
 
-      
+
         [HttpPost]
         public ActionResult CreateOrder()
         {

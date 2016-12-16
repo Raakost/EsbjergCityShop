@@ -10,19 +10,16 @@ using Gateway.ServiceGateways;
 
 namespace EsbjergCityShop.Controllers
 {
-    [Authorize]
     public class GiftCardsController : Controller
     {
         private readonly GiftCardServiceGateway _gg = new Facade().GetGiftCardGateway();
-
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult CreateGiftCard()
         {
             return View();
         }
-
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult CreateGiftCard(double? amount)
         {
@@ -37,15 +34,13 @@ namespace EsbjergCityShop.Controllers
             return RedirectToAction("CreateGiftCard");
 
         }
-
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult GiftCardBalance()
         {
             return View();
         }
-
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult GiftCardBalance(string cardNumber)
         {
