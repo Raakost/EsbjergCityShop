@@ -15,6 +15,7 @@
 
 @using (Html.BeginForm("CreateOrder", "Orders", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="jumbotron jumbotron_eventdetails">
         <div class="form-horizontal clearfix">
             <div class="col-md-6">

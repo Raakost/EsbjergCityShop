@@ -21,8 +21,8 @@ namespace EsbjergCityShop.Controllers
             return View(cart.GiftCards);
         }
 
-
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateOrder()
         {
             var cart = System.Web.HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;

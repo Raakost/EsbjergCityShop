@@ -13,14 +13,15 @@ namespace EsbjergCityShop.Controllers
     public class GiftCardsController : Controller
     {
         private readonly GiftCardServiceGateway _gg = new Facade().GetGiftCardGateway();
-        
+
         [HttpGet]
         public ActionResult CreateGiftCard()
         {
             return View();
         }
-        
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateGiftCard(double? amount)
         {
             if (amount.HasValue && amount != 0.0)
@@ -34,25 +35,19 @@ namespace EsbjergCityShop.Controllers
             return RedirectToAction("CreateGiftCard");
 
         }
-        
+
         [HttpGet]
         public ActionResult GiftCardBalance()
         {
             return View();
         }
-        
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GiftCardBalance(string cardNumber)
         {
             var giftCard = _gg.GetByCardNumber(cardNumber);
             return View(giftCard);
         }
-
-        //[HttpDelete]
-        //public ActionResult DeleteGiftCard(GiftCard giftCard)
-        //{
-        //    _gg.Delete(giftCard);
-        //    return RedirectToAction("Create", "Orders");
-        //}
     }
 }

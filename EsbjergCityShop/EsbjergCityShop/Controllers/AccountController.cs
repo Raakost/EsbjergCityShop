@@ -25,14 +25,13 @@ namespace EsbjergCityShop.Controllers
         {
         }
 
-        // GET: /Account/Login
+        [HttpGet]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
-        // POST: /Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model, string returnUrl)
@@ -56,14 +55,13 @@ namespace EsbjergCityShop.Controllers
             return View(model);
         }
 
-        // GET: /Account/Register
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
         }
-
-        // POST: /Account/Register
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterModel model)
@@ -74,9 +72,8 @@ namespace EsbjergCityShop.Controllers
                 _gateway.Register(model);
             }
             return RedirectToAction("Login", "Account");
-
         }
-        
+
         [HttpGet]
         public ActionResult LogOff()
         {
