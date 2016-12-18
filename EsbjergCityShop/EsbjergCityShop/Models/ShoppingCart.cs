@@ -8,7 +8,7 @@ namespace EsbjergCityShop.Models
 {
     public class ShoppingCart
     {
-        public ShoppingCart()
+        private ShoppingCart()
         {
             GiftCards = new List<GiftCard>();
         }
